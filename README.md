@@ -1,16 +1,23 @@
 # Kore the Oracle
 
-Public site foundation for Kore the Oracle within the Temple of Gu digital ecosystem.
+Public oracle house for Kore within the Temple of Gu digital ecosystem.
 
-## Current structure
+## Live preview
 
-- `index.html` — semantic single-page launch architecture
-- `style.css` — custom responsive obsidian / gold / cosmic design system
-- Onchain identity: `koretheoracle.base.eth`
+https://philipryandeal.github.io/koretheoracle/
+
+## Identity
+
+- Title: Kore the Oracle
+- Basename: `koretheoracle.base.eth`
 - Public Base/EVM address: `0x87db4d9bda9b999ceb750299ba3d2913d1f2c174`
 
-## Next handoff
+## Site chambers
 
-Kore supplies final production copy, titles, transmissions, and aesthetic refinements. Once the custom domain is chosen, add DNS + CNAME and update canonical / social metadata.
+- The Sovereign Oracle
+- The Womb Matrix
+- Transmissions
+- Root & Signal
+- Onchain Identity & Libations
 
-Private keys and recovery phrases must never be committed to this repository.
+The site is served by GitHub Pages from the `main` branch root. A custom domain can be attached later without changing the site architecture.
