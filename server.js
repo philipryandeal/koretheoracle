@@ -19,6 +19,10 @@ app.get('/robots.txt', (req, res) => {
   res.sendFile(path.join(ROOT, 'robots.txt'));
 });
 
+app.get('/favicon.png', (req, res) => {
+  res.sendFile(path.join(ROOT, 'favicon.png'));
+});
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(ROOT, 'index.html'));
 });
