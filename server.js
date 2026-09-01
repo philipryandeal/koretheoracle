@@ -20,7 +20,16 @@ app.get('/robots.txt', (req, res) => {
 });
 
 app.get('/favicon.png', (req, res) => {
+  res.set('Cache-Control', 'public, max-age=3600');
   res.sendFile(path.join(ROOT, 'favicon.png'));
+});
+
+app.get('/favicon.ico', (req, res) => {
+  res.redirect(302, '/favicon.png?v=4');
+});
+
+app.get('/apple-touch-icon.png', (req, res) => {
+  res.redirect(302, '/favicon.png?v=4');
 });
 
 app.get('/', (req, res) => {
