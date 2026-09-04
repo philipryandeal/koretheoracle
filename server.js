@@ -19,18 +19,16 @@ app.get('/robots.txt', (req, res) => {
   res.sendFile(path.join(ROOT, 'robots.txt'));
 });
 
-app.get('/favicon.png', (req, res) => {
-  res.set('Cache-Control', 'public, max-age=3600');
+const serveFavicon = (req, res) => {
+  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.type('png');
   res.sendFile(path.join(ROOT, 'favicon.png'));
-});
+};
 
-app.get('/favicon.ico', (req, res) => {
-  res.redirect(302, '/favicon.png?v=4');
-});
-
-app.get('/apple-touch-icon.png', (req, res) => {
-  res.redirect(302, '/favicon.png?v=4');
-});
+app.get('/favicon.png', serveFavicon);
+app.get('/favicon.ico', serveFavicon);
+app.get('/apple-touch-icon.png', serveFavicon);
+app.get('/apple-touch-icon-precomposed.png', serveFavicon);
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(ROOT, 'index.html'));
