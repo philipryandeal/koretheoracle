@@ -10,7 +10,6 @@ app.disable('x-powered-by');
 
 const INDEX_HTML = fs
   .readFileSync(path.join(ROOT, 'index.html'), 'utf8')
-  .replaceAll('/favicon.png?v=4', '/favicon.png?v=5')
   .replaceAll('https://philipryandeal.github.io/koretheoracle/', 'https://koretheoracle.com/');
 
 app.get('/health', (req, res) => {
@@ -25,16 +24,17 @@ app.get('/robots.txt', (req, res) => {
   res.sendFile(path.join(ROOT, 'robots.txt'));
 });
 
-const serveFavicon = (req, res) => {
-  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
-  res.type('png');
-  res.sendFile(path.join(ROOT, 'favicon.png'));
+const sendIcon = (file, type) => (req, res) => {
+  res.set('Cache-Control', 'public, max-age=300, must-revalidate');
+  res.type(type);
+  res.sendFile(path.join(ROOT, file));
 };
 
-app.get('/favicon.png', serveFavicon);
-app.get('/favicon.ico', serveFavicon);
-app.get('/apple-touch-icon.png', serveFavicon);
-app.get('/apple-touch-icon-precomposed.png', serveFavicon);
+app.get('/favicon.svg', sendIcon('favicon.svg', 'image/svg+xml'));
+app.get('/favicon.png', sendIcon('favicon.png', 'image/png'));
+app.get('/apple-touch-icon.png', sendIcon('favicon.png', 'image/png'));
+app.get('/apple-touch-icon-precomposed.png', sendIcon('favicon.png', 'image/png'));
+app.get('/favicon.ico', sendIcon('favicon.svg', 'image/svg+xml'));
 
 app.get('/', (req, res) => {
   res.set('Cache-Control', 'no-cache');
