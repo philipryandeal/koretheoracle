@@ -24,6 +24,11 @@ app.get('/robots.txt', (req, res) => {
   res.sendFile(path.join(ROOT, 'robots.txt'));
 });
 
+app.get('/sitemap.xml', (req, res) => {
+  res.type('application/xml');
+  res.sendFile(path.join(ROOT, 'sitemap.xml'));
+});
+
 const sendIcon = (file, type) => (req, res) => {
   res.set('Cache-Control', 'public, max-age=300, must-revalidate');
   res.type(type);
