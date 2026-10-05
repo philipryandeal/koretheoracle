@@ -5,8 +5,28 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
+const CSP = [
+  "default-src 'self'",
+  "script-src 'none'",
+  "style-src 'self'",
+  "font-src 'self'",
+  "img-src 'self' data: https:",
+  "connect-src 'self'",
+  "frame-src 'none'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "frame-ancestors 'none'",
+  "form-action 'self'",
+  "upgrade-insecure-requests"
+].join('; ');
 
 app.disable('x-powered-by');
+
+app.use((req, res, next) => {
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000');
+  res.setHeader('Content-Security-Policy', CSP);
+  next();
+});
 
 const INDEX_HTML = fs
   .readFileSync(path.join(ROOT, 'index.html'), 'utf8')
