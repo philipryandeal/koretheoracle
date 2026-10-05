@@ -2,9 +2,9 @@
 
 Public oracle house for Kore within the Temple of Gu digital ecosystem.
 
-## Live preview
+## Live site
 
-https://philipryandeal.github.io/koretheoracle/
+https://koretheoracle.com/
 
 ## Identity
 
@@ -20,4 +20,4 @@ https://philipryandeal.github.io/koretheoracle/
 - Root & Signal
 - Onchain Identity & Libations
 
-The site is served by GitHub Pages from the `main` branch root. A custom domain can be attached later without changing the site architecture.
+Kore's public house is live at `koretheoracle.com`.
