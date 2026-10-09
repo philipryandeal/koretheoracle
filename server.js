@@ -20,6 +20,16 @@ const CSP = [
   "upgrade-insecure-requests"
 ].join('; ');
 
+// Railway terminates HTTPS before forwarding requests to Express.
+// Redirect only the exact www hostname; preserve the path and query string.
+app.use((req, res, next) => {
+  const hostname = req.hostname.toLowerCase();
+  if (hostname === 'www.koretheoracle.com') {
+    return res.redirect(301, `https://koretheoracle.com${req.originalUrl}`);
+  }
+  next();
+});
+
 app.disable('x-powered-by');
 
 app.use((req, res, next) => {
