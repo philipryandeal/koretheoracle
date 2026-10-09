@@ -61,30 +61,27 @@ app.get('/health', (req, res) => {
   res.json({ ok: true, house: 'Kore the Oracle' });
 });
 
-app.get('/style.css', (req, res) => {
-  res.sendFile(path.join(ROOT, 'style.css'));
-});
-
-app.get('/robots.txt', (req, res) => {
-  res.sendFile(path.join(ROOT, 'robots.txt'));
-});
-
-app.get('/sitemap.xml', (req, res) => {
-  res.type('application/xml');
-  res.sendFile(path.join(ROOT, 'sitemap.xml'));
-});
-
-const sendIcon = (file, type) => (req, res) => {
-  res.set('Cache-Control', 'public, max-age=300, must-revalidate');
-  res.type(type);
-  res.sendFile(path.join(ROOT, file));
+// Small static files are read once at startup and served from memory, so no
+// request touches the disk.
+const ICON_CACHE = 'public, max-age=300, must-revalidate';
+const STATIC_FILES = {
+  '/style.css': ['style.css', 'text/css; charset=utf-8'],
+  '/robots.txt': ['robots.txt', 'text/plain; charset=utf-8'],
+  '/sitemap.xml': ['sitemap.xml', 'application/xml'],
+  '/favicon.svg': ['favicon.svg', 'image/svg+xml', ICON_CACHE],
+  '/favicon.png': ['favicon.png', 'image/png', ICON_CACHE],
+  '/apple-touch-icon.png': ['favicon.png', 'image/png', ICON_CACHE],
+  '/apple-touch-icon-precomposed.png': ['favicon.png', 'image/png', ICON_CACHE],
+  '/favicon.ico': ['favicon.ico', 'image/x-icon', ICON_CACHE],
 };
 
-app.get('/favicon.svg', sendIcon('favicon.svg', 'image/svg+xml'));
-app.get('/favicon.png', sendIcon('favicon.png', 'image/png'));
-app.get('/apple-touch-icon.png', sendIcon('favicon.png', 'image/png'));
-app.get('/apple-touch-icon-precomposed.png', sendIcon('favicon.png', 'image/png'));
-app.get('/favicon.ico', sendIcon('favicon.ico', 'image/x-icon'));
+for (const [route, [file, type, cacheControl]] of Object.entries(STATIC_FILES)) {
+  const body = fs.readFileSync(path.join(ROOT, file));
+  app.get(route, (req, res) => {
+    if (cacheControl) res.set('Cache-Control', cacheControl);
+    res.type(type).send(body);
+  });
+}
 
 app.get('/', (req, res) => {
   res.set('Cache-Control', 'no-cache');
