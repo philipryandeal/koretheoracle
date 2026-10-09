@@ -7,9 +7,9 @@ const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
 const CSP = [
   "default-src 'self'",
-  "script-src 'none'",
-  "style-src 'self'",
-  "font-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: https:",
   "connect-src 'self'",
   "frame-src 'none'",
