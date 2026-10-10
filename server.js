@@ -90,6 +90,20 @@ app.get(['/matrix', '/matrix/'], (req, res) => {
   res.set('Cache-Control', 'no-cache');
   res.type('html').send(MATRIX_HTML);
 });
+const MATRIX_STATIONS = new Map();
+for (const station of JSON.parse(MATRIX_JSON).stations) {
+  MATRIX_STATIONS.set(station.id, fs.readFileSync(path.join(ROOT, 'matrix', 'stations', station.id, 'index.html')));
+}
+app.get('/matrix/stations/:id', (req, res) => {
+  if (MATRIX_STATIONS.has(req.params.id)) return res.redirect(308, '/matrix/stations/' + req.params.id + '/');
+  res.status(404).type('html').send(NOT_FOUND_HTML);
+});
+app.get('/matrix/stations/:id/', (req, res) => {
+  const content = MATRIX_STATIONS.get(req.params.id);
+  if (!content) return res.status(404).type('html').send(NOT_FOUND_HTML);
+  res.set('Cache-Control', 'no-cache');
+  res.type('html').send(content);
+});
 app.get('/matrix/tree.json', (req, res) => {
   res.set('Cache-Control', 'no-cache');
   res.type('application/json').send(MATRIX_JSON);
