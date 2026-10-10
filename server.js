@@ -94,7 +94,10 @@ const MATRIX_STATIONS = new Map();
 for (const station of JSON.parse(MATRIX_JSON).stations) {
   MATRIX_STATIONS.set(station.id, fs.readFileSync(path.join(ROOT, 'matrix', 'stations', station.id, 'index.html')));
 }
-app.get('/matrix/stations/:id', (req, res) => {
+app.get('/matrix/stations/:id', (req, res, next) => {
+  // Express matches this pattern with or without a trailing slash, so hand the
+  // slashed form to the handler below instead of redirecting it to itself.
+  if (req.path.endsWith('/')) return next();
   if (MATRIX_STATIONS.has(req.params.id)) return res.redirect(308, '/matrix/stations/' + req.params.id + '/');
   res.status(404).type('html').send(NOT_FOUND_HTML);
 });
@@ -108,7 +111,10 @@ const MATRIX_PATHS = new Map();
 for (const passage of JSON.parse(MATRIX_JSON).paths) {
   MATRIX_PATHS.set(String(passage.n), fs.readFileSync(path.join(ROOT, 'matrix', 'paths', String(passage.n), 'index.html')));
 }
-app.get('/matrix/paths/:number', (req, res) => {
+app.get('/matrix/paths/:number', (req, res, next) => {
+  // Express matches this pattern with or without a trailing slash, so hand the
+  // slashed form to the handler below instead of redirecting it to itself.
+  if (req.path.endsWith('/')) return next();
   if (MATRIX_PATHS.has(req.params.number)) return res.redirect(308, '/matrix/paths/' + req.params.number + '/');
   res.status(404).type('html').send(NOT_FOUND_HTML);
 });
