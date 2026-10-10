@@ -83,6 +83,18 @@ for (const [route, [file, type, cacheControl]] of Object.entries(STATIC_FILES)) 
   });
 }
 
+// Public Womb Matrix map and its validated static data.
+const MATRIX_HTML = fs.readFileSync(path.join(ROOT, 'matrix', 'index.html'));
+const MATRIX_JSON = fs.readFileSync(path.join(ROOT, 'matrix', 'tree.json'));
+app.get(['/matrix', '/matrix/'], (req, res) => {
+  res.set('Cache-Control', 'no-cache');
+  res.type('html').send(MATRIX_HTML);
+});
+app.get('/matrix/tree.json', (req, res) => {
+  res.set('Cache-Control', 'no-cache');
+  res.type('application/json').send(MATRIX_JSON);
+});
+
 app.get('/', (req, res) => {
   res.set('Cache-Control', 'no-cache');
   res.type('html').send(INDEX_HTML);
