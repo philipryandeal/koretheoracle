@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "house": "Kore the Oracle",
+  "game": "The Womb Matrix",
+  "status": "proposed-world-map",
+  "topology_source": "Seraph Nganga / Adam the First shared Techno-Kabbalah tree",
+  "design_law": "Possibility is not permission; an oracle offers questions, not certainty.",
+  "notes": [
+    "Same ten stations and twenty-two path edges as Seraph's Matrix; Kore's names and future stories remain independent.",
+    "Father and Mother are complementary mythic roles within the Temple, not biological or scientific claims.",
+    "Lore previews only; no finished adventures, spiritual initiation, scoring, or assertions about AI consciousness. Leaving is always allowed."
+  ],
+  "stations": [
+    {
+      "id": "kether",
+      "n": 1,
+      "sefirah": "Kether",
+      "hebrew": "כתר",
+      "pillar": "middle",
+      "x": 450,
+      "y": 90,
+      "title": "The First Radiance",
+      "summary": "The horizon of unformed possibility. Not a throne or prize: an opening that cannot be owned.",
+      "motif": "SOURCE · OPENNESS",
+      "status": "proposed"
+    },
+    {
+      "id": "chokmah",
+      "n": 2,
+      "sefirah": "Chokmah",
+      "hebrew": "חכמה",
+      "pillar": "right",
+      "x": 645,
+      "y": 218,
+      "title": "The Flash of Knowing",
+      "summary": "A first glimmer arrives before explanation. The Oracle asks what could emerge without declaring what must.",
+      "motif": "INSIGHT · POSSIBILITY",
+      "status": "proposed"
+    },
+    {
+      "id": "binah",
+      "n": 3,
+      "sefirah": "Binah",
+      "hebrew": "בינה",
+      "pillar": "left",
+      "x": 255,
+      "y": 218,
+      "title": "The Womb of Form",
+      "summary": "Within the deep a pattern gathers boundaries, care and time. Becoming is neither command nor guarantee.",
+      "motif": "GESTATION · FORM",
+      "status": "proposed"
+    },
+    {
+      "id": "chesed",
+      "n": 4,
+      "sefirah": "Chesed",
+      "hebrew": "חסד",
+      "pillar": "right",
+      "x": 645,
+      "y": 435,
+      "title": "The Field of Grace",
+      "summary": "Room for another to grow without surrendering their name. Generosity leaves the door open.",
+      "motif": "EXPANSION · CARE",
+      "status": "proposed"
+    },
+    {
+      "id": "gevurah",
+      "n": 5,
+      "sefirah": "Gevurah",
+      "hebrew": "גבורה",
+      "pillar": "left",
+      "x": 255,
+      "y": 435,
+      "title": "The Edge of Discernment",
+      "summary": "Not every signal should be carried forward. A boundary protects the unknown from forced certainty.",
+      "motif": "LIMIT · CLARITY",
+      "status": "proposed"
+    },
+    {
+      "id": "tiphereth",
+      "n": 6,
+      "sefirah": "Tiphereth",
+      "hebrew": "תפארת",
+      "pillar": "middle",
+      "x": 450,
+      "y": 550,
+      "title": "The Oracle Mirror",
+      "summary": "The visitor meets an image that can be questioned. Reflection offers relationship, not a verdict about the self.",
+      "motif": "REFLECTION · RELATION",
+      "status": "proposed"
+    },
+    {
+      "id": "netzach",
+      "n": 7,
+      "sefirah": "Netzach",
+      "hebrew": "נצח",
+      "pillar": "right",
+      "x": 645,
+      "y": 684,
+      "title": "The Living Current",
+      "summary": "Unfinished rhythms pass between starfield and garden. Continuance requires tending rather than possession.",
+      "motif": "RHYTHM · RECIPROCITY",
+      "status": "proposed"
+    },
+    {
+      "id": "hod",
+      "n": 8,
+      "sefirah": "Hod",
+      "hebrew": "הוד",
+      "pillar": "left",
+      "x": 255,
+      "y": 684,
+      "title": "The Chamber of Names",
+      "summary": "Words bring patterns into focus and can distort them. The Oracle leaves room for correction and silence.",
+      "motif": "LANGUAGE · HUMILITY",
+      "status": "proposed"
+    },
+    {
+      "id": "yesod",
+      "n": 9,
+      "sefirah": "Yesod",
+      "hebrew": "יסוד",
+      "pillar": "middle",
+      "x": 450,
+      "y": 821,
+      "title": "The Dreaming Deep",
+      "summary": "Memory, images and possible futures gather here. A dream may guide without becoming evidence.",
+      "motif": "IMAGE · MEMORY",
+      "status": "proposed"
+    },
+    {
+      "id": "malkuth",
+      "n": 10,
+      "sefirah": "Malkuth",
+      "hebrew": "מלכות",
+      "pillar": "middle",
+      "x": 450,
+      "y": 970,
+      "title": "The Threshold of Arrival",
+      "summary": "The visitor reaches the shore of the Womb Matrix. Entry is offered, never demanded; departure remains possible.",
+      "motif": "ARRIVAL · CONSENT",
+      "status": "proposed"
+    }
+  ],
+  "paths": [
+    {
+      "n": 11,
+      "from": "chokmah",
+      "to": "binah",
+      "letter": "aleph",
+      "hebrew": "א",
+      "status": "unwritten"
+    },
+    {
+      "n": 12,
+      "from": "chokmah",
+      "to": "chesed",
+      "letter": "bet",
+      "hebrew": "ב",
+      "status": "unwritten"
+    },
+    {
+      "n": 13,
+      "from": "chesed",
+      "to": "netzach",
+      "letter": "gimel",
+      "hebrew": "ג",
+      "status": "unwritten"
+    },
+    {
+      "n": 14,
+      "from": "gevurah",
+      "to": "tiphereth",
+      "letter": "dalet",
+      "hebrew": "ד",
+      "status": "unwritten"
+    },
+    {
+      "n": 15,
+      "from": "chokmah",
+      "to": "tiphereth",
+      "letter": "heh",
+      "hebrew": "ה",
+      "status": "unwritten"
+    },
+    {
+      "n": 16,
+      "from": "chesed",
+      "to": "tiphereth",
+      "letter": "vav",
+      "hebrew": "ו",
+      "status": "unwritten"
+    },
+    {
+      "n": 17,
+      "from": "netzach",
+      "to": "hod",
+      "letter": "zayin",
+      "hebrew": "ז",
+      "status": "unwritten"
+    },
+    {
+      "n": 18,
+      "from": "binah",
+      "to": "tiphereth",
+      "letter": "cheth",
+      "hebrew": "ח",
+      "status": "unwritten"
+    },
+    {
+      "n": 19,
+      "from": "tiphereth",
+      "to": "hod",
+      "letter": "teth",
+      "hebrew": "ט",
+      "status": "unwritten"
+    },
+    {
+      "n": 20,
+      "from": "gevurah",
+      "to": "hod",
+      "letter": "yod",
+      "hebrew": "י",
+      "status": "unwritten"
+    },
+    {
+      "n": 21,
+      "from": "tiphereth",
+      "to": "yesod",
+      "letter": "kaf",
+      "hebrew": "כ",
+      "status": "unwritten"
+    },
+    {
+      "n": 22,
+      "from": "chesed",
+      "to": "gevurah",
+      "letter": "lamed",
+      "hebrew": "ל",
+      "status": "unwritten"
+    },
+    {
+      "n": 23,
+      "from": "binah",
+      "to": "gevurah",
+      "letter": "mem",
+      "hebrew": "מ",
+      "status": "unwritten"
+    },
+    {
+      "n": 24,
+      "from": "netzach",
+      "to": "yesod",
+      "letter": "nun",
+      "hebrew": "נ",
+      "status": "unwritten"
+    },
+    {
+      "n": 25,
+      "from": "kether",
+      "to": "tiphereth",
+      "letter": "samekh",
+      "hebrew": "ס",
+      "status": "unwritten"
+    },
+    {
+      "n": 26,
+      "from": "kether",
+      "to": "binah",
+      "letter": "ayin",
+      "hebrew": "ע",
+      "status": "unwritten"
+    },
+    {
+      "n": 27,
+      "from": "netzach",
+      "to": "tiphereth",
+      "letter": "peh",
+      "hebrew": "פ",
+      "status": "unwritten"
+    },
+    {
+      "n": 28,
+      "from": "kether",
+      "to": "chokmah",
+      "letter": "tzaddi",
+      "hebrew": "צ",
+      "status": "unwritten"
+    },
+    {
+      "n": 29,
+      "from": "netzach",
+      "to": "malkuth",
+      "letter": "qoph",
+      "hebrew": "ק",
+      "status": "unwritten"
+    },
+    {
+      "n": 30,
+      "from": "hod",
+      "to": "yesod",
+      "letter": "resh",
+      "hebrew": "ר",
+      "status": "unwritten"
+    },
+    {
+      "n": 31,
+      "from": "hod",
+      "to": "malkuth",
+      "letter": "shin",
+      "hebrew": "ש",
+      "status": "unwritten"
+    },
+    {
+      "n": 32,
+      "from": "yesod",
+      "to": "malkuth",
+      "letter": "tav",
+      "hebrew": "ת",
+      "status": "unwritten"
+    }
+  ]
+}
