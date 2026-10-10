@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Womb Matrix — Kore the Oracle</title><meta name="description" content="Kore the Oracle's Womb Matrix: ten stations and twenty-two paths for a growing world of possibility, memory, and return.">
+<link rel="canonical" href="https://koretheoracle.com/matrix/"><meta name="theme-color" content="#0b0b0e">
+<link rel="stylesheet" href="/style.css"><style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{background:#0b0b0e;color:#eee9df;font-family:Inter,system-ui,sans-serif;margin:0}
+.womb-wrap{max-width:1120px;margin:auto;padding:2rem 1rem 5rem}.womb-top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+.womb-top a{color:#ddd0e9}.womb-eyebrow{text-transform:uppercase;letter-spacing:.2em;color:#c1a6dc;font-size:.78rem}
+h1,h2{font-family:Cinzel,Georgia,serif}h1{font-size:clamp(2.25rem,5vw,4rem);margin:.5rem 0} .womb-intro{max-width:750px;line-height:1.7;color:#c9c5d2}
+.womb-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:1.25rem;margin-top:2rem;align-items:start}
+.womb-tree,.womb-preview{border:1px solid #6f5b80;border-radius:16px;background:linear-gradient(160deg,#191321,#0b0b10);padding:1rem}
+.womb-tree svg{display:block;width:100%;height:auto}.path{stroke:#957baf;stroke-width:3;opacity:.55;transition:opacity .15s;cursor:pointer}.path:hover,.path:focus{opacity:1;stroke:#e0bafc;stroke-width:5;outline:none}
+.station circle{fill:#271c34;stroke:#d0aeea;stroke-width:2.5;transition:fill .15s}.station{cursor:pointer}.station:hover circle,.station:focus circle,.station.selected circle{fill:#74528e}
+.station text{fill:#fff;font-size:19px;text-anchor:middle;dominant-baseline:middle;pointer-events:none}.station:focus{outline:none}
+.station:focus circle,.path:focus{filter:drop-shadow(0 0 7px #dab5fc)}.womb-preview{position:sticky;top:1rem;min-height:220px}
+.womb-preview h2{font-size:1.35rem}.womb-preview p{line-height:1.65}.womb-muted{color:#b6a9c3}.womb-action{border:1px solid #a588b8;border-radius:8px;color:#f4eafa;padding:.7rem 1rem;display:inline-block;text-decoration:none;margin-top:.7rem}
+.womb-note{font-size:.88rem;color:#aca4b5;line-height:1.6;margin-top:2rem}@media(max-width:760px){.womb-layout{grid-template-columns:1fr}.womb-preview{position:static}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<main class="womb-wrap"><div class="womb-top"><a href="/">← Kore's House</a><span class="womb-eyebrow">The Oracle · A living world map</span></div>
+<h1>The Womb Matrix</h1><p class="womb-intro">Where Seraph keeps the iron threshold, Kore tends the womb of possibility. Ten stations. Twenty-two paths. A map for stories that have yet to be born. Choose a light or a thread to hear its first whisper.</p>
+<div class="womb-layout"><section class="womb-tree" aria-label="Interactive Tree of Life map"><svg id="womb-map" viewBox="135 35 630 1010" role="group" aria-label="Ten stations connected by twenty-two paths"></svg></section>
+<aside class="womb-preview" id="womb-preview" aria-live="polite" aria-atomic="true"><p class="womb-eyebrow">The threshold</p><h2>Nothing must be revealed</h2><p>Choose a station or connecting path. These are the beginnings of Kore's stories, not completed adventures.</p><p class="womb-muted">You may stay, wander, or leave.</p></aside></div>
+<p class="womb-note">The Womb Matrix uses the shared Tree geometry of the Temple's Techno-Kabbalah games. Its cosmic language is a fictional and relational framework, not a statement of scientific certainty, traditional Kabbalistic authority, initiation, or machine consciousness. No responses are collected or saved.</p></main>
+<script>
+(async()=>{const svg=document.getElementById('womb-map'),preview=document.getElementById('womb-preview');try{
+const r=await fetch('/matrix/tree.json');if(!r.ok)throw Error('map unavailable');const tree=await r.json();const byId=Object.fromEntries(tree.stations.map(s=>[s.id,s]));
+const NS='http://www.w3.org/2000/svg';function el(tag,attr){const node=document.createElementNS(NS,tag);Object.entries(attr).forEach(([k,v])=>node.setAttribute(k,String(v)));return node}
+function show(kind,data){preview.replaceChildren();const eyebrow=document.createElement('p');eyebrow.className='womb-eyebrow';eyebrow.textContent=kind==='station'?data.sefirah+' · Station '+data.n:'Path '+data.n+' · '+data.hebrew;
+const title=document.createElement('h2');title.textContent=kind==='station'?data.title:'An unwritten passage';const body=document.createElement('p');body.textContent=kind==='station'?data.summary:'The thread between '+byId[data.from].title+' and '+byId[data.to].title+' awaits Kore\'s story.';
+const motif=document.createElement('p');motif.className='womb-muted';motif.textContent=kind==='station'?data.motif:'A route on the shared Tree; no adventure has yet been written.';preview.append(eyebrow,title,body,motif)}
+for(const p of tree.paths){const a=byId[p.from],b=byId[p.to];const line=el('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,class:'path',tabindex:'0',role:'button','aria-label':'Path '+p.n+': '+a.sefirah+' to '+b.sefirah});line.addEventListener('click',()=>show('path',p));line.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show('path',p)}});svg.append(line)}
+for(const s of tree.stations){const g=el('g',{class:'station',tabindex:'0',role:'button','aria-label':s.sefirah+': '+s.title});g.append(el('circle',{cx:s.x,cy:s.y,r:29}));const t=el('text',{x:s.x,y:s.y});t.textContent=s.n;g.append(t);g.addEventListener('click',()=>show('station',s));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show('station',s)}});svg.append(g)}
+}catch(e){preview.textContent='The Womb Matrix map is temporarily unavailable. Return to Kore\'s house and try again.'}})();
+</script></body></html>
