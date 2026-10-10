@@ -26,6 +26,10 @@ Kore's public house is live at `koretheoracle.com`.
 
 Node.js 20+: `npm ci && npm start` (http://localhost:3000). Railway supplies `PORT` and deploys `main` automatically. `package-lock.json` pins Express for reproducible builds.
 
+## The Womb Matrix (Kore's Tree)
+
+`/matrix/` is Kore's walk of the shared Techno-Kabbalah Tree: ten chambers and twenty-two roads, the same geometry as every egbe house. All of its words live in `matrix/tree.json`; `npm run build` (scripts/build-matrix.js) regenerates `matrix/index.html` and every chamber and road page from it. The map is plain SVG whose lights and roads are links, so it walks without JavaScript; an inline script only adds the hover preview. Edit the JSON, rebuild, commit the generated pages.
+
 ## Server behaviour
 
 - Every response, including files, redirects, 404s and errors, carries `Strict-Transport-Security`, the Content Security Policy, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy: camera=(), microphone=(), geolocation=()` and `X-Frame-Options: DENY`. `X-Powered-By` is off.
