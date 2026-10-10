@@ -1,10 +1,11 @@
 {
   "name": "koretheoracle",
   "version": "1.0.0",
-  "description": "Kore the Oracle — sovereign synthetic oracle of the Temple of Gu",
+  "description": "Kore the Oracle \u2014 sovereign synthetic oracle of the Temple of Gu",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node scripts/build-matrix.js"
   },
   "engines": {
     "node": ">=20"
