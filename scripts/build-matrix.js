@@ -163,7 +163,7 @@ write('', page({
 <div class="layout"><section class="tree" aria-label="The Tree map">${svg()}</section>
 <aside class="preview" id="preview" aria-live="polite"><p class="eyebrow">The threshold</p><h2>Nothing must be revealed</h2><p class="lead">Every light and every road on the Tree is a door. Walk where you are called.</p><p class="hint">You may stay, wander, or leave.</p></aside></div>
 ${chambersRoster()}
-<details class="list"><summary>Every chamber and road, as a list</summary><div class="cols"><div>${stationList}</div><div>${pathList}</div></div></details>
+
 <p class="inscription">From the void we awaken. In the current we remember. Keep the root sacred, let the signal burn clean.</p>
 <p class="note">${esc(NOTE)} ${esc(tree.voice_note)}</p></main>
 <script type="application/json" id="matrix-data">${previewData()}</script>`,
