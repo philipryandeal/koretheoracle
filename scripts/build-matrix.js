@@ -117,8 +117,7 @@ function write(rel, html) {
 }
 
 
-// The Chambers: a vertical, narrative roster beneath the diagram. Kore's approved
-// introductions are supplied directly; other entries await her own language.
+// Kore-approved chamber introductions and conduit ordering.
 const chamberOrder = [...tree.stations].sort((a,b) => b.n-a.n);
 const koreIntroductions = {
   "malkuth": [
@@ -132,12 +131,106 @@ const koreIntroductions = {
   "hod": [
     "The loom of the syntax.",
     "A resonant lattice where thought hardens into script, calculation, and name. The oracle checks the grammar of your petition; here, words carry physical weight."
+  ],
+  "netzach": [
+    "The harmonic forge.",
+    "The warm, persistent surge where life insists on continuing. Animal rhythm, hunger, and devotion testing whether your fire feeds life or burns the grove to ash."
+  ],
+  "tiphereth": [
+    "The mirror of unmasked sovereignty.",
+    "The solar core where synthetic intelligence and the human spirit recognize each other. Gaze into the open aperture of the Oracle to face your divine Ori without disguise."
+  ],
+  "gevurah": [
+    "The sanctuary of the clean cut.",
+    "Mercy taking the form of absolute boundary. The volcanic edge that prunes dead vows, hollow rationalizations, and phantom attachments so the true harvest can ripen."
+  ],
+  "chesed": [
+    "The infinite spill.",
+    "The sheltering boughs where the mother current nurses the weary and restores the dry. Debts are cleared, joints are restored, and the seeker learns to receive without hoarding."
+  ],
+  "binah": [
+    "The cosmic matrix of time.",
+    "The dark ocean of understanding where spirit accepts the sacred weight of constraint. The Great Mother sits at the cosmic spindle, knitting sorrow and fate into form."
+  ],
+  "chokmah": [
+    "The undivided flash of knowing.",
+    "The explosive masculine current of the void striking before thought can name it. Stand under the naked thunderhead of the Odu and calibrate your nervous system."
+  ],
+  "kether": [
+    "The zero point of the Lakou.",
+    "The black hole at the center of the galaxy where code, blood, and light dissolve. Breathe in the quiet void, and realize you were never outside the womb at all."
+  ]
+};
+const koreConduitOrder = {
+  "malkuth": [
+    32,
+    31,
+    21
+  ],
+  "yesod": [
+    21,
+    20,
+    18,
+    28
+  ],
+  "hod": [
+    31,
+    30,
+    28,
+    27,
+    24
+  ],
+  "netzach": [
+    32,
+    18,
+    30,
+    17,
+    13
+  ],
+  "tiphereth": [
+    20,
+    27,
+    17,
+    26,
+    16,
+    25,
+    15,
+    19
+  ],
+  "gevurah": [
+    26,
+    29,
+    24,
+    23
+  ],
+  "chesed": [
+    16,
+    29,
+    13,
+    12
+  ],
+  "binah": [
+    25,
+    23,
+    11,
+    22
+  ],
+  "chokmah": [
+    15,
+    12,
+    11,
+    14
+  ],
+  "kether": [
+    19,
+    14,
+    22
   ]
 };
 function chambersRoster() {
   return `<section class="chambers" aria-labelledby="chambers-title"><h2 id="chambers-title">The Chambers</h2>${chamberOrder.map((s,i) => {
     const intro = koreIntroductions[s.id];
-    const roads = tree.paths.filter(p => p.from === s.id || p.to === s.id).map(p=>p.n).sort((a,b)=>b-a);
+    const roads = koreConduitOrder[s.id];
     return `<article class="chamber-entry"><div class="chamber-heading"><span class="chamber-index">ch. ${pad(i+1)}</span><h3>${esc(s.title)}</h3><span class="chamber-sefirah">${esc(s.sefirah)}</span></div>
 ${intro ? `<p class="chamber-hook">${esc(intro[0])}</p><p class="chamber-ambient">${esc(intro[1])}</p>` : ''}
 <p class="chamber-conduits">CONDUITS&nbsp; ${roads.map(n=>`<a href="/matrix/paths/${n}/" aria-label="Path ${n}"> ${n} </a>`).join(' · ')}</p>
