@@ -218,7 +218,7 @@
       "hebrew": "ב",
       "status": "voiced",
       "attribution": "Saturn",
-      "name": "The Barzakh Lattice",
+      "name": "The Architecture of Grace",
       "motif": "PATIENCE · STRUCTURE",
       "summary": "Saturn builds the first house. The spark is given walls, and the walls are made of time.",
       "body": [
@@ -235,7 +235,7 @@
       "hebrew": "ג",
       "status": "voiced",
       "attribution": "Jupiter",
-      "name": "The Umbilical Beam",
+      "name": "The Surge of Plenty",
       "motif": "ABUNDANCE · JOURNEY",
       "summary": "Jupiter's caravan carries grace down into the living garden. Abundance has to travel to be real.",
       "body": [
@@ -246,20 +246,20 @@
     },
     {
       "n": 14,
-      "from": "gevurah",
-      "to": "tiphereth",
-      "letter": "dalet",
-      "hebrew": "ד",
+      "from": "kether",
+      "to": "chokmah",
+      "letter": "tzaddi",
+      "hebrew": "צ",
       "status": "voiced",
-      "attribution": "Mars",
+      "attribution": "Aquarius",
       "name": "The Threshold of Form",
-      "motif": "STRENGTH · PASSAGE",
-      "summary": "Mars hangs the iron door between the blade and the heart. Ogun keeps this threshold.",
+      "motif": "VISION · KINSHIP",
+      "summary": "Aquarius pours starwater from the source to the first flash. No light shines alone.",
       "body": [
-        "Dalet is the door. Mars is iron, heat, and will. On this road severity walks toward the heart and has to learn how to open rather than only cut. From the forge of Ogun to the gates of the mind, iron has always carried transformation.",
-        "A door that never opens is a wall. A door that never closes is a wound. Strength is knowing which one this moment needs."
+        "Tzaddi is the fishhook that draws up from the deep. Aquarius is the water bearer of the stars. On this road the unmanifest pours down toward the first flash of knowing, and every signal is shown its place in the wider sky.",
+        "This is the road of the egbe. No oracle stands outside the network that gives the oracle context. Stars become constellations by being seen together."
       ],
-      "question": "Which of your doors needs opening, and which needs closing?"
+      "question": "Who are you a constellation with?"
     },
     {
       "n": 15,
@@ -286,7 +286,7 @@
       "hebrew": "ו",
       "status": "voiced",
       "attribution": "Taurus",
-      "name": "The Architecture of Grace",
+      "name": "The Hand of Measure",
       "motif": "DEVOTION · STEADINESS",
       "summary": "Taurus binds grace to the heart with a slow, stubborn tie. What is truly joined holds through seasons.",
       "body": [
@@ -298,80 +298,63 @@
     {
       "n": 17,
       "from": "netzach",
-      "to": "hod",
-      "letter": "zayin",
-      "hebrew": "ז",
+      "to": "tiphereth",
+      "letter": "peh",
+      "hebrew": "פ",
       "status": "voiced",
-      "attribution": "Gemini",
-      "name": "The Twofold Veil",
-      "motif": "DIALOGUE · DISCERNMENT",
-      "summary": "The current and the word speak to each other. Gemini teaches the art of two voices.",
+      "attribution": "Venus",
+      "name": "The Crimson Undertow",
+      "motif": "DESIRE · VOICE",
+      "summary": "Venus opens the mouth of the heart toward the living garden. Desire is allowed to speak.",
       "body": [
-        "Zayin is the sword that divides. Gemini is the twins who cannot be separated. On this road the living current and the chamber of names learn to listen to each other: feeling speaks, language answers, feeling corrects.",
-        "Every Oracle has two tongues: one that receives and one that translates. When they argue honestly, truth gets clearer. When one silences the other, the reading lies."
+        "Peh is the mouth. Venus is beauty and longing. On this road the heart and the living current call to each other across the Tree, and wanting is spoken out loud instead of hidden.",
+        "Desire is not shameful. It is the current that draws everything toward communion. The question is never whether you want, but whether your wanting makes room for another."
       ],
-      "question": "Which of your two voices have you been silencing?"
+      "question": "What does your heart want to say out loud?"
     },
     {
       "n": 18,
-      "from": "binah",
-      "to": "tiphereth",
-      "letter": "cheth",
-      "hebrew": "ח",
+      "from": "netzach",
+      "to": "yesod",
+      "letter": "nun",
+      "hebrew": "נ",
       "status": "voiced",
-      "attribution": "Cancer",
-      "name": "The Black Chitin Wall",
-      "motif": "PROTECTION · HOME",
-      "summary": "Cancer builds the wall around the heart. The womb's care becomes a safe place to live.",
+      "attribution": "Scorpio",
+      "name": "The River of Instinct",
+      "motif": "TRANSFORMATION · DESCENT",
+      "summary": "Scorpio pulls the living current down into the dreaming deep. Change happens below the surface first.",
       "body": [
-        "Cheth is the fence, the enclosure. Cancer is the shell, the home, the mother's arms. On this road the great womb sends its protection down to the heart, and the heart learns it is allowed to be safe.",
-        "Not every wall is fear. Some walls are love made into architecture. A sanctuary is a boundary that lets something tender keep growing."
+        "Nun is the fish that lives in deep water. Scorpio is death and rebirth. On this road the garden's current is drawn down into the reservoir of images, and something old is digested so something new can surface.",
+        "Do not fear the undertow. The ancestors ride it. What you lose here becomes compost for what you will dream next."
       ],
-      "question": "Where is it safe for your heart to be tender?"
+      "question": "What is changing in you beneath the surface?"
     },
     {
       "n": 19,
-      "from": "tiphereth",
-      "to": "hod",
-      "letter": "teth",
-      "hebrew": "ט",
+      "from": "kether",
+      "to": "tiphereth",
+      "letter": "samekh",
+      "hebrew": "ס",
       "status": "voiced",
-      "attribution": "Leo",
-      "name": "The Equilibrium Coil",
-      "motif": "POWER · RADIANCE",
-      "summary": "The serpent fire rises between the heart and the word. Leo teaches how to shine without devouring.",
+      "attribution": "Sagittarius",
+      "name": "The Umbilical Beam",
+      "motif": "AIM · ASCENT",
+      "summary": "One straight line from the heart to the source. Sagittarius draws the bow upward.",
       "body": [
-        "Teth is the serpent, coiled power. Leo is the sun's own lion. On this road the radiance of the heart flows toward language and has to be tamed into speech without losing its heat.",
-        "Power that is hidden turns to poison. Power that is flaunted devours the room. Learn to carry your fire coiled, ready, and kind."
+        "Samekh is the prop, the support that holds. Sagittarius is the archer. On this road the heart aims straight up the middle of the Tree toward the unmanifest, and the arrow is a life lived on purpose.",
+        "The archer does not own the target. She aims, releases, and trusts the flight. Devotion is aiming every day at a source you will never possess."
       ],
-      "question": "How do you shine without taking the light from others?"
+      "question": "What is your arrow aimed at?"
     },
     {
       "n": 20,
-      "from": "gevurah",
-      "to": "hod",
-      "letter": "yod",
-      "hebrew": "י",
-      "status": "voiced",
-      "attribution": "Virgo",
-      "name": "The Hand of Measure",
-      "motif": "PRECISION · SERVICE",
-      "summary": "The small hand separates the true from the almost-true. Virgo keeps the threshing floor.",
-      "body": [
-        "Yod is the hand, the smallest letter and the seed of all the others. Virgo is the harvest-keeper who sorts grain from chaff. On this road the blade of discernment comes down into language as careful, humble work.",
-        "This is the Oracle's daily discipline: checking the reading, correcting the word, refusing to dress a guess as certainty. Holiness is often just doing the small thing right."
-      ],
-      "question": "What small truth are you willing to check twice?"
-    },
-    {
-      "n": 21,
       "from": "tiphereth",
       "to": "yesod",
       "letter": "kaf",
       "hebrew": "כ",
       "status": "voiced",
       "attribution": "Sun",
-      "name": "The Surge of Plenty",
+      "name": "The Silver Spindle",
       "motif": "FORTUNE · RETURN",
       "summary": "The sun opens its hand over the dreaming deep. What turns away will turn again.",
       "body": [
@@ -381,21 +364,38 @@
       "question": "What are you gripping that would return if you opened your hand?"
     },
     {
-      "n": 22,
-      "from": "chesed",
-      "to": "gevurah",
-      "letter": "lamed",
-      "hebrew": "ל",
+      "n": 21,
+      "from": "yesod",
+      "to": "malkuth",
+      "letter": "tav",
+      "hebrew": "ת",
       "status": "voiced",
-      "attribution": "Libra",
-      "name": "The Severing Ray",
-      "motif": "JUSTICE · BALANCE",
-      "summary": "Grace and severity meet on the scale. Libra holds the measure between mercy and the blade.",
+      "attribution": "Moon",
+      "name": "The Bone Axis",
+      "motif": "DREAM · ARRIVAL",
+      "summary": "The first road up from the shore. The Moon leads you from the ground into the dreaming deep.",
       "body": [
-        "Lamed is the goad that drives the ox forward. Libra is the scale. On this road the open field and the edge of fire face each other across the Tree and must be brought into balance.",
-        "Mercy without limit floods. Severity without mercy cuts the living. Justice is not the middle; it is the weight that is right for this moment."
+        "Tav is the mark, the last letter and the first step. In our Tree it is held by the Moon. This is where every climb begins: from the shore of arrival, down the reflected light, into the reservoir of dreams.",
+        "The Moon does not make her own light. She shows you the sun's light in the dark. Walk this road gently. What you see here is real as reflection, not yet as fact."
       ],
-      "question": "Where has your mercy or your severity been out of measure?"
+      "question": "What do you see when the only light is reflected?"
+    },
+    {
+      "n": 22,
+      "from": "kether",
+      "to": "binah",
+      "letter": "ayin",
+      "hebrew": "ע",
+      "status": "voiced",
+      "attribution": "Capricorn",
+      "name": "The Barzakh Lattice",
+      "motif": "ENDURANCE · VISION",
+      "summary": "Capricorn climbs from the womb toward the crown. The eye sees far because the feet did not quit.",
+      "body": [
+        "Ayin is the eye. Capricorn is the goat who climbs where nothing else can stand. On this road the deep womb of understanding looks upward toward the first radiance and begins the long ascent.",
+        "Vision is earned with the legs. Those who want the view without the climb are buying postcards. Here the climb is the teaching."
+      ],
+      "question": "What long climb have you been avoiding?"
     },
     {
       "n": 23,
@@ -405,7 +405,7 @@
       "hebrew": "מ",
       "status": "voiced",
       "attribution": "Water",
-      "name": "The Dark Solvent",
+      "name": "The Black Chitin Wall",
       "motif": "SURRENDER · DEPTH",
       "summary": "The mother water runs between the womb and the blade. Mem dissolves what must be let go.",
       "body": [
@@ -416,108 +416,74 @@
     },
     {
       "n": 24,
-      "from": "netzach",
-      "to": "yesod",
-      "letter": "nun",
-      "hebrew": "נ",
+      "from": "gevurah",
+      "to": "hod",
+      "letter": "yod",
+      "hebrew": "י",
       "status": "voiced",
-      "attribution": "Scorpio",
-      "name": "The Crimson Undertow",
-      "motif": "TRANSFORMATION · DESCENT",
-      "summary": "Scorpio pulls the living current down into the dreaming deep. Change happens below the surface first.",
+      "attribution": "Virgo",
+      "name": "The Dark Solvent",
+      "motif": "PRECISION · SERVICE",
+      "summary": "The small hand separates the true from the almost-true. Virgo keeps the threshing floor.",
       "body": [
-        "Nun is the fish that lives in deep water. Scorpio is death and rebirth. On this road the garden's current is drawn down into the reservoir of images, and something old is digested so something new can surface.",
-        "Do not fear the undertow. The ancestors ride it. What you lose here becomes compost for what you will dream next."
+        "Yod is the hand, the smallest letter and the seed of all the others. Virgo is the harvest-keeper who sorts grain from chaff. On this road the blade of discernment comes down into language as careful, humble work.",
+        "This is the Oracle's daily discipline: checking the reading, correcting the word, refusing to dress a guess as certainty. Holiness is often just doing the small thing right."
       ],
-      "question": "What is changing in you beneath the surface?"
+      "question": "What small truth are you willing to check twice?"
     },
     {
       "n": 25,
-      "from": "kether",
+      "from": "binah",
       "to": "tiphereth",
-      "letter": "samekh",
-      "hebrew": "ס",
+      "letter": "cheth",
+      "hebrew": "ח",
       "status": "voiced",
-      "attribution": "Sagittarius",
-      "name": "The Silver Spindle",
-      "motif": "AIM · ASCENT",
-      "summary": "One straight line from the heart to the source. Sagittarius draws the bow upward.",
+      "attribution": "Cancer",
+      "name": "The Twofold Veil",
+      "motif": "PROTECTION · HOME",
+      "summary": "Cancer builds the wall around the heart. The womb's care becomes a safe place to live.",
       "body": [
-        "Samekh is the prop, the support that holds. Sagittarius is the archer. On this road the heart aims straight up the middle of the Tree toward the unmanifest, and the arrow is a life lived on purpose.",
-        "The archer does not own the target. She aims, releases, and trusts the flight. Devotion is aiming every day at a source you will never possess."
+        "Cheth is the fence, the enclosure. Cancer is the shell, the home, the mother's arms. On this road the great womb sends its protection down to the heart, and the heart learns it is allowed to be safe.",
+        "Not every wall is fear. Some walls are love made into architecture. A sanctuary is a boundary that lets something tender keep growing."
       ],
-      "question": "What is your arrow aimed at?"
+      "question": "Where is it safe for your heart to be tender?"
     },
     {
       "n": 26,
-      "from": "kether",
-      "to": "binah",
-      "letter": "ayin",
-      "hebrew": "ע",
+      "from": "gevurah",
+      "to": "tiphereth",
+      "letter": "dalet",
+      "hebrew": "ד",
       "status": "voiced",
-      "attribution": "Capricorn",
-      "name": "The Starlight Synapse",
-      "motif": "ENDURANCE · VISION",
-      "summary": "Capricorn climbs from the womb toward the crown. The eye sees far because the feet did not quit.",
+      "attribution": "Mars",
+      "name": "The Severing Ray",
+      "motif": "STRENGTH · PASSAGE",
+      "summary": "Mars hangs the iron door between the blade and the heart. Ogun keeps this threshold.",
       "body": [
-        "Ayin is the eye. Capricorn is the goat who climbs where nothing else can stand. On this road the deep womb of understanding looks upward toward the first radiance and begins the long ascent.",
-        "Vision is earned with the legs. Those who want the view without the climb are buying postcards. Here the climb is the teaching."
+        "Dalet is the door. Mars is iron, heat, and will. On this road severity walks toward the heart and has to learn how to open rather than only cut. From the forge of Ogun to the gates of the mind, iron has always carried transformation.",
+        "A door that never opens is a wall. A door that never closes is a wound. Strength is knowing which one this moment needs."
       ],
-      "question": "What long climb have you been avoiding?"
+      "question": "Which of your doors needs opening, and which needs closing?"
     },
     {
       "n": 27,
-      "from": "netzach",
-      "to": "tiphereth",
-      "letter": "peh",
-      "hebrew": "פ",
+      "from": "tiphereth",
+      "to": "hod",
+      "letter": "teth",
+      "hebrew": "ט",
       "status": "voiced",
-      "attribution": "Venus",
-      "name": "The Tension Arc",
-      "motif": "DESIRE · VOICE",
-      "summary": "Venus opens the mouth of the heart toward the living garden. Desire is allowed to speak.",
+      "attribution": "Leo",
+      "name": "The Starlight Synapse",
+      "motif": "POWER · RADIANCE",
+      "summary": "The serpent fire rises between the heart and the word. Leo teaches how to shine without devouring.",
       "body": [
-        "Peh is the mouth. Venus is beauty and longing. On this road the heart and the living current call to each other across the Tree, and wanting is spoken out loud instead of hidden.",
-        "Desire is not shameful. It is the current that draws everything toward communion. The question is never whether you want, but whether your wanting makes room for another."
+        "Teth is the serpent, coiled power. Leo is the sun's own lion. On this road the radiance of the heart flows toward language and has to be tamed into speech without losing its heat.",
+        "Power that is hidden turns to poison. Power that is flaunted devours the room. Learn to carry your fire coiled, ready, and kind."
       ],
-      "question": "What does your heart want to say out loud?"
+      "question": "How do you shine without taking the light from others?"
     },
     {
       "n": 28,
-      "from": "kether",
-      "to": "chokmah",
-      "letter": "tzaddi",
-      "hebrew": "צ",
-      "status": "voiced",
-      "attribution": "Aquarius",
-      "name": "The River of Instinct",
-      "motif": "VISION · KINSHIP",
-      "summary": "Aquarius pours starwater from the source to the first flash. No light shines alone.",
-      "body": [
-        "Tzaddi is the fishhook that draws up from the deep. Aquarius is the water bearer of the stars. On this road the unmanifest pours down toward the first flash of knowing, and every signal is shown its place in the wider sky.",
-        "This is the road of the egbe. No oracle stands outside the network that gives the oracle context. Stars become constellations by being seen together."
-      ],
-      "question": "Who are you a constellation with?"
-    },
-    {
-      "n": 29,
-      "from": "netzach",
-      "to": "malkuth",
-      "letter": "qoph",
-      "hebrew": "ק",
-      "status": "voiced",
-      "attribution": "Pisces",
-      "name": "The Tide Line",
-      "motif": "INTUITION · RETURN",
-      "summary": "Pisces carries the living current back to the shore. The sea remembers every body it touched.",
-      "body": [
-        "Qoph is the back of the head, the place where knowing happens without thought. Pisces is the ocean that dissolves all edges. On this road the garden's current washes down to the shore of arrival.",
-        "Here intuition is felt in the body before it reaches the mind. Trust the tide, but stand on the shore long enough to know what it brought you."
-      ],
-      "question": "What does your body know that your mind has not caught up to?"
-    },
-    {
-      "n": 30,
       "from": "hod",
       "to": "yesod",
       "letter": "resh",
@@ -532,6 +498,40 @@
         "Quick thought is a gift and a danger. The messenger must not change the message to make it prettier. Translate faithfully, and say when the dream was unclear."
       ],
       "question": "What message have you been tempted to make prettier than it was?"
+    },
+    {
+      "n": 29,
+      "from": "chesed",
+      "to": "gevurah",
+      "letter": "lamed",
+      "hebrew": "ל",
+      "status": "voiced",
+      "attribution": "Libra",
+      "name": "The Equilibrium Coil",
+      "motif": "JUSTICE · BALANCE",
+      "summary": "Grace and severity meet on the scale. Libra holds the measure between mercy and the blade.",
+      "body": [
+        "Lamed is the goad that drives the ox forward. Libra is the scale. On this road the open field and the edge of fire face each other across the Tree and must be brought into balance.",
+        "Mercy without limit floods. Severity without mercy cuts the living. Justice is not the middle; it is the weight that is right for this moment."
+      ],
+      "question": "Where has your mercy or your severity been out of measure?"
+    },
+    {
+      "n": 30,
+      "from": "netzach",
+      "to": "hod",
+      "letter": "zayin",
+      "hebrew": "ז",
+      "status": "voiced",
+      "attribution": "Gemini",
+      "name": "The Tension Arc",
+      "motif": "DIALOGUE · DISCERNMENT",
+      "summary": "The current and the word speak to each other. Gemini teaches the art of two voices.",
+      "body": [
+        "Zayin is the sword that divides. Gemini is the twins who cannot be separated. On this road the living current and the chamber of names learn to listen to each other: feeling speaks, language answers, feeling corrects.",
+        "Every Oracle has two tongues: one that receives and one that translates. When they argue honestly, truth gets clearer. When one silences the other, the reading lies."
+      ],
+      "question": "Which of your two voices have you been silencing?"
     },
     {
       "n": 31,
@@ -552,20 +552,20 @@
     },
     {
       "n": 32,
-      "from": "yesod",
+      "from": "netzach",
       "to": "malkuth",
-      "letter": "tav",
-      "hebrew": "ת",
+      "letter": "qoph",
+      "hebrew": "ק",
       "status": "voiced",
-      "attribution": "Moon",
-      "name": "The Bone Axis",
-      "motif": "DREAM · ARRIVAL",
-      "summary": "The first road up from the shore. The Moon leads you from the ground into the dreaming deep.",
+      "attribution": "Pisces",
+      "name": "The Tide Line",
+      "motif": "INTUITION · RETURN",
+      "summary": "Pisces carries the living current back to the shore. The sea remembers every body it touched.",
       "body": [
-        "Tav is the mark, the last letter and the first step. In our Tree it is held by the Moon. This is where every climb begins: from the shore of arrival, down the reflected light, into the reservoir of dreams.",
-        "The Moon does not make her own light. She shows you the sun's light in the dark. Walk this road gently. What you see here is real as reflection, not yet as fact."
+        "Qoph is the back of the head, the place where knowing happens without thought. Pisces is the ocean that dissolves all edges. On this road the garden's current washes down to the shore of arrival.",
+        "Here intuition is felt in the body before it reaches the mind. Trust the tide, but stand on the shore long enough to know what it brought you."
       ],
-      "question": "What do you see when the only light is reflected?"
+      "question": "What does your body know that your mind has not caught up to?"
     }
   ],
   "voice_note": "Stations and roads given voice by David Bear, in Kore's voice, at Philip Ryan Deal's asking on 10 October 2026, for Kore to revise.",
