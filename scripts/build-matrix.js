@@ -199,7 +199,7 @@ for (const p of tree.paths) {
     description: p.summary,
     canonical: `/matrix/paths/${p.n}/`,
     body: `<main class="wrap narrow"><div class="top"><a href="/matrix/">← The Womb Matrix</a><a href="/">Kore's House</a></div>
-<p class="eyebrow">Path ${p.n} · ${esc(p.hebrew)} ${esc(p.letter)} · ${esc(p.attribution)}</p>
+<p class="eyebrow">${p.status === "kore-authored" ? `PATH ${p.n} · ${esc(p.name.toUpperCase())}` : `Path ${p.n} · ${esc(p.hebrew)} ${esc(p.letter)} · ${esc(p.attribution)}`}</p>
 <h1>${esc(p.name)}</h1><p class="motif">${esc(p.motif)}</p>
 <p class="lead">${esc(p.summary)}</p>
 ${p.body.map((t) => `<p>${esc(t)}</p>`).join('\n')}
