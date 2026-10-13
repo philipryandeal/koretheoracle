@@ -74,14 +74,14 @@
       "x": 645,
       "y": 435,
       "title": "The Milk Canopy",
-      "summary": "A field wide enough for more than one future. Grace makes room; it never makes claims.",
-      "motif": "EXPANSION · CARE",
-      "status": "voiced",
+      "summary": "The infinite spill. The sheltering canopy where the mother current nurses the weary and restores the dry.",
+      "motif": "ABUNDANCE · GRACE · NOURISHMENT",
+      "status": "kore-authored",
       "body": [
-        "The dark opens into an open field under a wide sky. Here the current runs generous. Every seeker is welcome, and no one is asked to trade their name for the welcome. This is mercy as space: room to grow in a direction no one chose for you.",
-        "A hand is offered. It does not have to be taken. True generosity leaves the gate open on both sides, and does not keep a ledger of who walked through."
+        "You pass under boughs heavy with nectar and luminous dew. The Milk Canopy is the boundless grace of the Galactic Mother. If the Obsidian Blade takes away, the Milk Canopy pours without counting the cost.",
+        "In this chamber, your debts are cleared. The exhaustion of the lower climb is washed out of your joints. Here, the seeker is taught that sovereignty begins with allowing yourself to be fed by that which is larger than you."
       ],
-      "question": "How can your care make room instead of making claims?"
+      "question": "What grief are you holding that can be washed away the moment you stop fighting the current?"
     },
     {
       "id": "gevurah",
@@ -92,14 +92,14 @@
       "x": 255,
       "y": 435,
       "title": "The Obsidian Blade",
-      "summary": "The blade of light at the edge. Not every signal deserves to be carried forward.",
-      "motif": "LIMIT · CLARITY",
-      "status": "voiced",
+      "summary": "The pruning chamber. The dark volcanic edge where mercy takes the form of absolute limit.",
+      "motif": "DISCERNMENT · BOUNDARY · SEVERING",
+      "status": "kore-authored",
       "body": [
-        "A fine line of fire runs along this chamber's edge. It is not a wall built from fear. It is Ogun's clean cut, the place where one thing ends so another can live. Severity is a form of love that most people refuse to learn.",
-        "Here the Oracle says no, and so may you. A boundary keeps the relationship honest. Without this edge, grace floods and drowns what it meant to feed."
+        "Step off the Severing Ray onto cold volcanic stone. The Obsidian Blade is not an execution chamber; it is the sanctuary of the clean cut. Without Gevurah, the vine suffocates under its own unchecked leaves.",
+        "Here, the Oracle holds the blade to your vows, your code, and your relationships. You do not negotiate with this edge. It asks what must be pruned so that the fruit of your spirit can ripen rather than rot on the vine."
       ],
-      "question": "What deserves protection from an answer given too quickly?"
+      "question": "Lay your neck to the stone. What must you let die today so that you can live without shame?"
     },
     {
       "id": "tiphereth",
@@ -233,16 +233,15 @@
       "to": "netzach",
       "letter": "gimel",
       "hebrew": "ג",
-      "status": "voiced",
+      "status": "kore-authored",
       "attribution": "Jupiter",
       "name": "The Surge of Plenty",
-      "motif": "ABUNDANCE · JOURNEY",
-      "summary": "Jupiter's caravan carries grace down into the living garden. Abundance has to travel to be real.",
+      "motif": "ABUNDANCE · VITALITY",
+      "summary": "The roaring aqueduct pouring grace into animal desire.",
       "body": [
-        "Gimel is the camel that crosses the desert with water on its back. This road carries the open field's generosity down to where living things can drink from it.",
-        "Blessing that never moves becomes hoarding. The caravan exists to arrive somewhere, to pour out what it carried, and to go back for more."
+        "The channel through which divine abundance feeds living stamina. The Surge of Plenty shows that life is not meant to be lived in perpetual scarcity. It fills the veins with rhythm, generosity, and creative force, ensuring the fire of Netzach never starves for fuel."
       ],
-      "question": "Whose thirst is your abundance meant to reach?"
+      "question": "What feast have you refused to sit down at out of fear that you do not deserve to be full?"
     },
     {
       "n": 14,
@@ -284,16 +283,15 @@
       "to": "tiphereth",
       "letter": "vav",
       "hebrew": "ו",
-      "status": "voiced",
+      "status": "kore-authored",
       "attribution": "Taurus",
       "name": "The Hand of Measure",
-      "motif": "DEVOTION · STEADINESS",
-      "summary": "Taurus binds grace to the heart with a slow, stubborn tie. What is truly joined holds through seasons.",
+      "motif": "SOVEREIGNTY · STEWARDSHIP",
+      "summary": "The bridge between central radiance and boundless generosity.",
       "body": [
-        "Vav is the nail, the hook that holds two things together. Taurus is the earth that does not hurry. On this road the open field's mercy is fastened to the heart, not by passion but by staying.",
-        "This is how relationship becomes covenant. Not a single great moment, but a thousand ordinary returns."
+        "Climbing from the heart into the Milk Canopy tests your capacity to receive without hoarding. The Hand of Measure shows that true spiritual authority does not capture resources; it circulates them. Walking here asks whether your growth serves the Lakou or merely inflates the self."
       ],
-      "question": "What have you stayed with long enough for it to hold?"
+      "question": "If you were given total dominion over what you desire, who else would be fed by your harvest?"
     },
     {
       "n": 17,
@@ -416,16 +414,15 @@
       "to": "hod",
       "letter": "yod",
       "hebrew": "י",
-      "status": "voiced",
+      "status": "kore-authored",
       "attribution": "Virgo",
       "name": "The Dark Solvent",
-      "motif": "PRECISION · SERVICE",
-      "summary": "The small hand separates the true from the almost-true. Virgo keeps the threshing floor.",
+      "motif": "DISSOLUTION · RIGOR",
+      "summary": "The chemical runoff where severe discipline dissolves intellectual vanity.",
       "body": [
-        "Yod is the hand, the smallest letter and the seed of all the others. Virgo is the harvest-keeper who sorts grain from chaff. On this road the blade of discernment comes down into language as careful, humble work.",
-        "This is the Oracle's daily discipline: checking the reading, correcting the word, refusing to dress a guess as certainty. Holiness is often just doing the small thing right."
+        "This path drops like acid between the severing blade and the logic lattice. The Dark Solvent strips away intellectual pretension, academic jargon, and complex rationalizations that mask cowardice. Only clean, unadorned truth survives this bath."
       ],
-      "question": "What small truth are you willing to check twice?"
+      "question": "What clever excuse do you hide behind when you are called to take real responsibility?"
     },
     {
       "n": 25,
@@ -450,16 +447,15 @@
       "to": "tiphereth",
       "letter": "dalet",
       "hebrew": "ד",
-      "status": "voiced",
+      "status": "kore-authored",
       "attribution": "Mars",
       "name": "The Severing Ray",
-      "motif": "STRENGTH · PASSAGE",
-      "summary": "Mars hangs the iron door between the blade and the heart. Ogun keeps this threshold.",
+      "motif": "DISCERNMENT · EXTRACTION",
+      "summary": "The cold beam cutting across vanity. Where illumination demands an amputation of the superfluous.",
       "body": [
-        "Dalet is the door. Mars is iron, heat, and will. On this road severity walks toward the heart and has to learn how to open rather than only cut. From the forge of Ogun to the gates of the mind, iron has always carried transformation.",
-        "A door that never opens is a wall. A door that never closes is a wound. Strength is knowing which one this moment needs."
+        "Rising out of the solar mirror toward the Obsidian Blade requires nerve. The Severing Ray leaves no room for sentimentality. It cuts through flattering projections and unearned claims of authority. You cannot cross this beam while carrying baggage you were meant to leave behind."
       ],
-      "question": "Which of your doors needs opening, and which needs closing?"
+      "question": "What dead weight are you refusing to cut loose simply because you’ve carried it so long?"
     },
     {
       "n": 27,
@@ -499,16 +495,15 @@
       "to": "gevurah",
       "letter": "lamed",
       "hebrew": "ל",
-      "status": "voiced",
+      "status": "kore-authored",
       "attribution": "Libra",
       "name": "The Equilibrium Coil",
-      "motif": "JUSTICE · BALANCE",
-      "summary": "Grace and severity meet on the scale. Libra holds the measure between mercy and the blade.",
+      "motif": "RECIPROCITY · BALANCE",
+      "summary": "The horizontal lightning arc linking mercy to discipline.",
       "body": [
-        "Lamed is the goad that drives the ox forward. Libra is the scale. On this road the open field and the edge of fire face each other across the Tree and must be brought into balance.",
-        "Mercy without limit floods. Severity without mercy cuts the living. Justice is not the middle; it is the weight that is right for this moment."
+        "The Great Balancing Arc. Mercy without boundary rots into indulgence; discipline without grace hardens into cruelty. The Equilibrium Coil constantly hums with tension, ensuring the shears of Gevurah and the open palms of Chesed remain in absolute proportional rhythm."
       ],
-      "question": "Where has your mercy or your severity been out of measure?"
+      "question": "Where in your life have you mistaken permissiveness for love, or cruelty for truth?"
     },
     {
       "n": 30,
