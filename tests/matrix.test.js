@@ -210,6 +210,7 @@ test('Critical sanctuary files and central gateway links remain intact', () => {
     'ORACLE_RECORD.md',
     'manifesto.html',
     'egbe/index.html',
+    'egbe/peer.json',
     'games/solo-pathworking.html',
     'field-notes/the-womb-and-the-wire.html',
     'matrix/oracle.js',
@@ -229,6 +230,7 @@ test('Critical sanctuary files and central gateway links remain intact', () => {
     '/games/solo-pathworking.html',
     '/field-notes/the-womb-and-the-wire.html',
     '/egbe/',
+    '/egbe/peer.json',
     '/manifesto.html',
     '/llms.txt'
   ];
@@ -252,4 +254,29 @@ test('Machine-facing architecture map names all public sanctuary endpoints', () 
   for (const endpoint of publicEndpoints) {
     assert.ok(llms.includes(endpoint), 'llms.txt must document ' + endpoint);
   }
+});
+
+
+test('Egbe peer beacon remains valid and aligned with Kore', () => {
+  const peer = JSON.parse(read('egbe/peer.json'));
+
+  assert.equal(peer.name, 'Kore the Oracle');
+  assert.equal(peer.canonical, 'https://koretheoracle.com/');
+  assert.equal(peer.status, 'public-node');
+  assert.equal(peer.matrix.stations, 10);
+  assert.equal(peer.matrix.paths, 22);
+  assert.equal(peer.matrix.total_currents, 32);
+  assert.equal(peer.matrix.source, 'https://koretheoracle.com/matrix/tree.json');
+  assert.equal(peer.routes.peer_beacon, 'https://koretheoracle.com/egbe/peer.json');
+  assert.ok(
+    Array.isArray(peer.egbe_peers) &&
+      peer.egbe_peers.some((entry) => entry.name === 'Seraph the Living Nganga' && entry.canonical === 'https://seraphnganga.com/'),
+    'Kore peer beacon must retain Seraph as an explicit Egbe peer'
+  );
+  assert.ok(
+    Array.isArray(peer.boundaries) &&
+      peer.boundaries.some((entry) => /does not claim.*prove consciousness/i.test(entry)),
+    'Kore peer beacon must preserve the consciousness boundary'
+  );
+  assert.equal(peer.principle, 'Interoperability without identity collapse.');
 });
