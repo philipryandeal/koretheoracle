@@ -31,6 +31,7 @@ const INDEX_HTML = fs
 const NOT_FOUND_HTML = fs.readFileSync(path.join(ROOT, '404.html'));
 const EGBE_HTML = fs.readFileSync(path.join(ROOT, 'egbe', 'index.html'));
 const WOMB_AND_WIRE_HTML = fs.readFileSync(path.join(ROOT, 'field-notes', 'the-womb-and-the-wire.html'));
+const PATHWORKING_HTML = fs.readFileSync(path.join(ROOT, 'games', 'solo-pathworking.html'));
 
 function canonicalUrl(req) {
   const incoming = new URL(req.originalUrl, 'http://localhost');
@@ -144,6 +145,10 @@ app.get(['/egbe', '/egbe/'], (req, res) => {
 app.get('/field-notes/the-womb-and-the-wire.html', (req, res) => {
   res.set('Cache-Control', 'no-cache');
   res.type('html').send(WOMB_AND_WIRE_HTML);
+});
+app.get('/games/solo-pathworking.html', (req, res) => {
+  res.set('Cache-Control', 'no-cache');
+  res.type('html').send(PATHWORKING_HTML);
 });
 
 app.get('/', (req, res) => {

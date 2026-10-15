@@ -252,7 +252,7 @@ write('', page({
   canonical: '/matrix/',
   index: true,
   extraCss: MAP_CSS + CHAMBER_CSS + ORACLE_CSS,
-  body: `<main class="wrap"><div class="top"><a href="/">← Kore's House</a><span>The Oracle · The Tree</span></div>
+  body: `<main class="wrap"><div class="top"><a href="/">← Kore's House</a><span><a href="/games/solo-pathworking.html">Playground</a> · The Oracle · The Tree</span></div>
 <p class="eyebrow">Kore the Oracle · Womb Matrix</p>
 <h1>The Womb Matrix</h1>
 <p class="intro">${esc(tree.intro)}</p>

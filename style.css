@@ -37,3 +37,26 @@ nav a.active{color:var(--gold-soft)}
 .prose .context-note{font-family:"IBM Plex Mono",monospace;font-size:.68rem;line-height:1.8;color:#88828f}
 .article-return{margin-top:42px;padding-top:28px;border-top:1px solid var(--line)}
 @media(max-width:900px){.roster-grid{grid-template-columns:1fr}.inner-hero{min-height:auto}}
+
+
+/* Playground: Solo Pathworking */
+.game-shell{padding-top:56px}
+.game-box{max-width:900px;margin:auto;padding:34px;border:1px solid var(--line-strong);background:linear-gradient(180deg,rgba(26,22,43,.68),rgba(17,17,22,.82))}
+.game-box h2{margin-bottom:12px}
+.game-box code{font-family:"IBM Plex Mono",monospace;color:var(--gold-soft)}
+.btn-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.game-btn{appearance:none;border:1px solid var(--gold);background:transparent;color:var(--paper);padding:12px 16px;font:500 .67rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.game-btn:hover,.game-btn:focus-visible{background:rgba(212,175,55,.08);border-color:var(--gold-soft)}
+.game-btn.primary{background:var(--gold);color:var(--void)}
+.game-btn.primary:hover,.game-btn.primary:focus-visible{background:var(--gold-soft)}
+.game-btn:disabled{opacity:.6;cursor:wait}
+.game-step{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.game-coordinate{margin:0;color:var(--gold-soft);font:400 .68rem "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase}
+.game-step h3{font-size:clamp(1.6rem,3vw,2.35rem);margin:10px 0 4px}
+.game-route{margin:0 0 24px;color:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.06em}
+.game-prompt{margin:24px 0 28px}
+.journal-label{display:block;margin-bottom:10px;color:var(--gold-soft);font:500 .72rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.journal-area{width:100%;min-height:160px;resize:vertical;padding:14px;border:1px solid var(--line-strong);background:rgba(8,8,12,.82);color:var(--paper);font:400 1rem/1.65 Inter,system-ui,sans-serif}
+.journal-area:focus{outline:2px solid var(--gold-soft);outline-offset:3px}
+.game-privacy{margin-top:10px;color:#88828f;font:400 .65rem/1.7 "IBM Plex Mono",monospace}
+@media(max-width:620px){.game-box{padding:22px}.game-shell{padding-top:36px}}
