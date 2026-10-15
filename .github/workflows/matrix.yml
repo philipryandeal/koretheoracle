@@ -1,37 +1,8 @@
 name: Validate Kore Matrix
 
 on:
-  pull_request:
-    paths:
-      - 'matrix/**'
-      - 'scripts/build-matrix.js'
-      - 'index.html'
-      - 'egbe/**'
-      - 'field-notes/**'
-      - 'games/**'
-      - 'manifesto.html'
-      - 'llms.txt'
-      - 'ORACLE_RECORD.md'
-      - 'server.js'
-      - 'tests/**'
-      - 'package*.json'
-      - '.github/workflows/matrix.yml'
   push:
-    branches: [main]
-    paths:
-      - 'matrix/**'
-      - 'scripts/build-matrix.js'
-      - 'index.html'
-      - 'egbe/**'
-      - 'field-notes/**'
-      - 'games/**'
-      - 'manifesto.html'
-      - 'llms.txt'
-      - 'ORACLE_RECORD.md'
-      - 'server.js'
-      - 'tests/**'
-      - 'package*.json'
-      - '.github/workflows/matrix.yml'
+  pull_request:
 
 permissions:
   contents: read
@@ -55,3 +26,6 @@ jobs:
 
       - name: Run sanctuary integrity tests
         run: npm test
+
+      - name: Verify generated Matrix is committed
+        run: git diff --exit-code -- matrix/
