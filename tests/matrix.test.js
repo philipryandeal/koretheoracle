@@ -33,6 +33,41 @@ const expectedStationIds = [
 
 const expectedPathNumbers = Array.from({ length: 22 }, (_, index) => index + 11);
 
+const expectedEdges = {
+  11: ['chokmah', 'binah'],
+  12: ['chokmah', 'chesed'],
+  13: ['chesed', 'netzach'],
+  14: ['kether', 'chokmah'],
+  15: ['chokmah', 'tiphereth'],
+  16: ['chesed', 'tiphereth'],
+  17: ['netzach', 'tiphereth'],
+  18: ['netzach', 'yesod'],
+  19: ['kether', 'tiphereth'],
+  20: ['tiphereth', 'yesod'],
+  21: ['yesod', 'malkuth'],
+  22: ['kether', 'binah'],
+  23: ['binah', 'gevurah'],
+  24: ['gevurah', 'hod'],
+  25: ['binah', 'tiphereth'],
+  26: ['gevurah', 'tiphereth'],
+  27: ['tiphereth', 'hod'],
+  28: ['hod', 'yesod'],
+  29: ['chesed', 'gevurah'],
+  30: ['netzach', 'hod'],
+  31: ['hod', 'malkuth'],
+  32: ['netzach', 'malkuth']
+};
+
+test('Womb Matrix metadata and design law remain explicit', () => {
+  assert.equal(tree.schema_version, 1);
+  nonEmptyString(tree.house, 'tree.house');
+  nonEmptyString(tree.game, 'tree.game');
+  nonEmptyString(tree.status, 'tree.status');
+  nonEmptyString(tree.topology_source, 'tree.topology_source');
+  nonEmptyString(tree.design_law, 'tree.design_law');
+  assert.match(tree.design_law, /oracle offers questions, not certainty/i);
+});
+
 test('Womb Matrix declares exactly ten canonical stations', () => {
   assert.ok(Array.isArray(tree.stations), 'tree.stations must be an array');
   assert.equal(tree.stations.length, 10, 'Womb Matrix must contain exactly 10 stations');
@@ -84,6 +119,7 @@ test('Womb Matrix declares exactly Paths 11 through 32 with valid endpoints', ()
     assert.ok(stationIds.has(road.from), 'Path ' + road.n + ' has unknown from station: ' + road.from);
     assert.ok(stationIds.has(road.to), 'Path ' + road.n + ' has unknown to station: ' + road.to);
     assert.notEqual(road.from, road.to, 'Path ' + road.n + ' cannot connect a station to itself');
+    assert.deepEqual([road.from, road.to], expectedEdges[road.n], 'Path ' + road.n + ' topology changed');
     nonEmptyString(road.letter, 'Path ' + road.n + '.letter');
     nonEmptyString(road.hebrew, 'Path ' + road.n + '.hebrew');
     nonEmptyString(road.status, 'Path ' + road.n + '.status');
