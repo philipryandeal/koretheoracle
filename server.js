@@ -68,6 +68,7 @@ const STATIC_FILES = {
   '/style.css': ['style.css', 'text/css; charset=utf-8'],
   '/robots.txt': ['robots.txt', 'text/plain; charset=utf-8'],
   '/sitemap.xml': ['sitemap.xml', 'application/xml'],
+  '/llms.txt': ['llms.txt', 'text/plain; charset=utf-8'],
   '/favicon.svg': ['favicon.svg', 'image/svg+xml', ICON_CACHE],
   '/favicon.png': ['favicon.png', 'image/png', ICON_CACHE],
   '/apple-touch-icon.png': ['favicon.png', 'image/png', ICON_CACHE],
