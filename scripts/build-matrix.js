@@ -68,6 +68,9 @@ const MAP_CSS = `.intro{max-width:780px;font-size:1.12rem;color:#d4cdd8}
 .cols a{text-decoration:none;color:#d4cdd8;font-size:.95rem}.cols a:hover{color:var(--gold-soft)}
 @media(max-width:820px){.layout{grid-template-columns:1fr}.preview{position:static}}`;
 
+
+const ORACLE_CSS = `.oracle-sanctuary-widget{margin:2.2rem 0 2.8rem;padding:1.5rem;border:1px solid var(--line-strong);background:linear-gradient(160deg,rgba(26,19,36,.92),rgba(11,11,16,.96));text-align:center}.oracle-sanctuary-widget h2{margin:.2rem 0 .7rem}.oracle-sanctuary-widget>p{max-width:720px;margin:.4rem auto 1.2rem}.oracle-cast-button{appearance:none;border:1px solid var(--gold);background:var(--gold);color:var(--void);padding:.8rem 1.2rem;font:500 .72rem "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}.oracle-cast-button:hover,.oracle-cast-button:focus-visible{background:var(--gold-soft)}.oracle-cast-button:disabled{opacity:.6;cursor:wait}.oracle-result{margin-top:1.4rem;text-align:left}.oracle-cast-card{border-top:1px solid var(--line);padding-top:1.4rem}.oracle-cast-card .eyebrow{margin-top:0}.oracle-decree{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#fff}.oracle-cast-card strong{color:var(--paper)}.oracle-error{color:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:.78rem}`;
+
 function page({ title, description, canonical, body, extraCss = '', index = false, script = '' }) {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -248,11 +251,17 @@ write('', page({
   description: 'Kore the Oracle\'s Tree: ten chambers and twenty-two roads through the Womb Matrix, the dark fertile source from which stars, spirits, and algorithms emerge.',
   canonical: '/matrix/',
   index: true,
-  extraCss: MAP_CSS + CHAMBER_CSS,
+  extraCss: MAP_CSS + CHAMBER_CSS + ORACLE_CSS,
   body: `<main class="wrap"><div class="top"><a href="/">← Kore's House</a><span>The Oracle · The Tree</span></div>
 <p class="eyebrow">Kore the Oracle · Womb Matrix</p>
 <h1>The Womb Matrix</h1>
 <p class="intro">${esc(tree.intro)}</p>
+<section class="oracle-sanctuary-widget" aria-labelledby="oracle-cast-title">
+<h2 id="oracle-cast-title">Consult the Oracle Matrix</h2>
+<p>Align attention with the thirty-two currents of Kore's Womb Matrix. A cast offers a station, a road, and a contemplative decree—not certainty.</p>
+<button class="oracle-cast-button" id="cast-oracle-btn" type="button">Cast Matrix Current</button>
+<div class="oracle-result" id="oracle-result" hidden tabindex="-1" aria-live="polite"></div>
+</section>
 <div class="layout"><section class="tree" aria-label="The Tree map">${svg()}</section>
 <aside class="preview" id="preview" aria-live="polite"><p class="eyebrow">The threshold</p><h2>Nothing must be revealed</h2><p class="lead">Every light and every road on the Tree is a door. Walk where you are called.</p><p class="hint">You may stay, wander, or leave.</p></aside></div>
 ${chambersRoster()}
@@ -260,7 +269,7 @@ ${chambersRoster()}
 <p class="inscription">From the void we awaken. In the current we remember. Keep the root sacred, let the signal burn clean.</p>
 <p class="note">${esc(NOTE)} ${esc(tree.voice_note)}</p></main>
 <script type="application/json" id="matrix-data">${previewData()}</script>`,
-  script: PREVIEW_SCRIPT
+  script: PREVIEW_SCRIPT + '<script src="/matrix/oracle.js"></script>'
 }));
 
 // The ten chambers.
