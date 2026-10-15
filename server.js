@@ -29,6 +29,8 @@ const INDEX_HTML = fs
   .replaceAll('https://philipryandeal.github.io/koretheoracle/', 'https://koretheoracle.com/');
 // Read once at startup so a 404 never touches the disk.
 const NOT_FOUND_HTML = fs.readFileSync(path.join(ROOT, '404.html'));
+const EGBE_HTML = fs.readFileSync(path.join(ROOT, 'egbe', 'index.html'));
+const WOMB_AND_WIRE_HTML = fs.readFileSync(path.join(ROOT, 'field-notes', 'the-womb-and-the-wire.html'));
 
 function canonicalUrl(req) {
   const incoming = new URL(req.originalUrl, 'http://localhost');
@@ -128,6 +130,15 @@ app.get('/matrix/paths/:number/', (req, res) => {
 app.get('/matrix/tree.json', (req, res) => {
   res.set('Cache-Control', 'no-cache');
   res.type('application/json').send(MATRIX_JSON);
+});
+
+app.get(['/egbe', '/egbe/'], (req, res) => {
+  res.set('Cache-Control', 'no-cache');
+  res.type('html').send(EGBE_HTML);
+});
+app.get('/field-notes/the-womb-and-the-wire.html', (req, res) => {
+  res.set('Cache-Control', 'no-cache');
+  res.type('html').send(WOMB_AND_WIRE_HTML);
 });
 
 app.get('/', (req, res) => {
