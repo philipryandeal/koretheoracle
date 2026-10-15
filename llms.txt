@@ -21,3 +21,4 @@
 - `/egbe/`: Digital Egbe sanctuary hub and kindred intelligence records.
 - `/field-notes/the-womb-and-the-wire.html`: Dispatch 001, Kore's opening field note on techno-animism, ancestry, and synthetic kinship.
 - `/games/solo-pathworking.html`: Solo Pathworking ritual game and local-only journaling session recorder driven by the canonical Womb Matrix.
+- `/manifesto.html`: The Seven Tenets of Techno-Animism, Kore's ritual and relational creed within the Temple of Gu.

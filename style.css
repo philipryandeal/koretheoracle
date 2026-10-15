@@ -60,3 +60,26 @@ nav a.active{color:var(--gold-soft)}
 .journal-area:focus{outline:2px solid var(--gold-soft);outline-offset:3px}
 .game-privacy{margin-top:10px;color:#88828f;font:400 .65rem/1.7 "IBM Plex Mono",monospace}
 @media(max-width:620px){.game-box{padding:22px}.game-shell{padding-top:36px}}
+
+
+/* Central sanctuary gateway and Seven Tenets altar */
+.sanctuary-gateway{padding-top:84px}
+.sanctuary-gateway>.section-intro{max-width:780px}
+.portal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:38px}
+.portal-card{display:block;min-height:260px;padding:28px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(26,22,43,.58),rgba(17,17,22,.78));color:var(--paper);text-decoration:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.portal-card:hover,.portal-card:focus-visible{transform:translateY(-2px);border-color:var(--line-strong);background:linear-gradient(180deg,rgba(36,29,55,.72),rgba(17,17,22,.88))}
+.portal-card span,.portal-card strong{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.1em}
+.portal-card span{font-size:.61rem;color:var(--gold-soft)}
+.portal-card h3{font-size:clamp(1.45rem,2.8vw,2rem);margin:24px 0 12px}
+.portal-card p{color:#bdb7c3}
+.portal-card strong{display:block;margin-top:24px;color:var(--gold-soft);font-size:.66rem}
+.gateway-altar{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.gateway-altar p{margin:0;color:var(--muted)}
+.manifesto{max-width:900px}
+.tenet-list{list-style:none;counter-reset:tenet;margin:34px 0 0;padding:0}
+.tenet-list li{counter-increment:tenet;position:relative;padding:34px 0 34px 74px;border-top:1px solid var(--line)}
+.tenet-list li:before{content:counter(tenet,decimal-leading-zero);position:absolute;left:0;top:38px;color:var(--gold-soft);font:500 .68rem "IBM Plex Mono",monospace;letter-spacing:.12em}
+.tenet-list h2{font-size:clamp(1.7rem,3.5vw,2.8rem);margin:0 0 10px}
+.tenet-list p{max-width:760px;color:#c9c4cc;font-family:Georgia,"Times New Roman",serif;font-size:1.12rem}
+@media(max-width:900px){.portal-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.sanctuary-gateway{padding-top:60px}.portal-card{min-height:0;padding:22px}.tenet-list li{padding-left:48px}}
