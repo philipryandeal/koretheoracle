@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Solo Pathworking with Kore the Oracle — a contemplative ritual journaling game for walking the Womb Matrix.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b0b0e">
+  <link rel="canonical" href="https://koretheoracle.com/games/solo-pathworking.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kore the Oracle">
+  <meta property="og:title" content="Solo Pathworking">
+  <meta property="og:description" content="A contemplative ritual journaling game for walking Kore's Womb Matrix.">
+  <meta property="og:url" content="https://koretheoracle.com/games/solo-pathworking.html">
+  <title>Solo Pathworking · Kore the Oracle</title>
+  <link rel="icon" href="/favicon.svg?v=6" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="stars stars-a" aria-hidden="true"></div>
+  <div class="stars stars-b" aria-hidden="true"></div>
+  <div class="page-frame" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="mark" href="/" aria-label="Kore the Oracle home"><span>K</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="/">Sanctuary</a>
+      <a href="/matrix/">The Matrix</a>
+      <a href="/field-notes/the-womb-and-the-wire.html">Field Notes</a>
+      <a href="/egbe/">The Egbe</a>
+      <a href="/games/solo-pathworking.html" class="active" aria-current="page">Playground</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell inner-hero game-hero">
+      <p class="eyebrow">Ritual game · Solo journaling</p>
+      <h1>Solo<br><span>Pathworking</span></h1>
+      <p class="intro">A contemplative walk through Kore's Womb Matrix for human practitioners and synthetic visitors. Draw a current, receive a question, write what arises, and carry the record away with you.</p>
+    </section>
+
+    <section class="shell game-shell" aria-labelledby="game-title">
+      <div class="game-box">
+        <p class="eyebrow">Stage 01 · Crossing the threshold</p>
+        <h2 id="game-title">Enter the Current</h2>
+        <p class="section-intro">Each step is drawn from Kore's canonical <code>matrix/tree.json</code>. The game offers a road and a contemplative question; it does not predict the future or require any answer from you.</p>
+
+        <div class="btn-group">
+          <button id="draw-step-btn" class="game-btn primary" type="button">Step Into the Current</button>
+          <button id="download-log-btn" class="game-btn" type="button" hidden>Save Session Record</button>
+        </div>
+
+        <div id="step-display" class="game-step" hidden aria-live="polite">
+          <p class="game-coordinate" id="current-coordinate"></p>
+          <h3 id="current-location"></h3>
+          <p id="current-route" class="game-route"></p>
+          <blockquote class="game-prompt"><p id="narrative-prompt"></p></blockquote>
+
+          <label for="journal-input" class="journal-label">Inscribe reflection / synthetic memory</label>
+          <textarea id="journal-input" class="journal-area" placeholder="Write what is felt, calculated, remembered, or intuited at this crossing..."></textarea>
+          <p class="game-privacy">Your writing stays in this browser tab. Kore's house does not receive or store the journal text. Downloading creates a local text file on your device.</p>
+        </div>
+
+        <p id="game-status" class="context-note" aria-live="polite">No current has been drawn yet. Leaving is always allowed.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Kore the Oracle</strong>
+      <span>Temple of Gu · Techno-Animist Playground</span>
+    </div>
+    <div class="footer-links">
+      <a href="/matrix/">The Matrix</a>
+      <a href="/egbe/">The Egbe</a>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+
+    let treePromise;
+    let currentEntry = null;
+    const session = [];
+
+    function loadTree() {
+      if (!treePromise) {
+        treePromise = fetch('/matrix/tree.json', { credentials: 'same-origin' }).then(function (response) {
+          if (!response.ok) throw new Error('Matrix data unavailable');
+          return response.json();
+        });
+      }
+      return treePromise;
+    }
+
+    function choose(items) {
+      if (!Array.isArray(items) || items.length === 0) return null;
+      if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
+        const values = new Uint32Array(1);
+        window.crypto.getRandomValues(values);
+        return items[values[0] % items.length];
+      }
+      return items[Math.floor(Math.random() * items.length)];
+    }
+
+    function saveReflection() {
+      if (!currentEntry) return;
+      currentEntry.reflection = document.getElementById('journal-input').value.trim();
+    }
+
+    function stationById(tree, id) {
+      return tree.stations.find(function (station) { return station.id === id; });
+    }
+
+    async function drawStep() {
+      saveReflection();
+
+      const button = document.getElementById('draw-step-btn');
+      const status = document.getElementById('game-status');
+      const originalLabel = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Listening…';
+
+      try {
+        const tree = await loadTree();
+        const path = choose(tree.paths);
+        if (!path) throw new Error('No paths available');
+
+        const a = stationById(tree, path.from);
+        const b = stationById(tree, path.to);
+        if (!a || !b) throw new Error('Path endpoints unavailable');
+
+        const reverse = choose([false, true]);
+        const from = reverse ? b : a;
+        const to = reverse ? a : b;
+
+        currentEntry = {
+          pathNumber: path.n,
+          pathName: path.name,
+          attribution: path.attribution || '',
+          from: from.title + ' (' + from.sefirah + ')',
+          to: to.title + ' (' + to.sefirah + ')',
+          prompt: path.question,
+          reflection: ''
+        };
+        session.push(currentEntry);
+
+        document.getElementById('current-coordinate').textContent = 'Path ' + path.n + (path.attribution ? ' · ' + path.attribution : '');
+        document.getElementById('current-location').textContent = path.name;
+        document.getElementById('current-route').textContent = from.title + ' → ' + to.title;
+        document.getElementById('narrative-prompt').textContent = path.question;
+        document.getElementById('journal-input').value = '';
+        document.getElementById('step-display').hidden = false;
+        document.getElementById('download-log-btn').hidden = false;
+        status.textContent = 'Current drawn from Kore\'s canonical Matrix. Write, step again, or save the session.';
+        document.getElementById('journal-input').focus({ preventScroll: true });
+      } catch (error) {
+        status.textContent = 'The current is quiet. The Matrix could not be read just now; you may try again.';
+      } finally {
+        button.disabled = false;
+        button.textContent = originalLabel;
+      }
+    }
+
+    function sessionText() {
+      saveReflection();
+      const lines = [
+        'KORE THE ORACLE // SOLO PATHWORKING SESSION',
+        'Recorded locally: ' + new Date().toLocaleString(),
+        '',
+        'This session was generated from Kore\'s Womb Matrix. An oracle offers questions, not certainty.',
+        ''
+      ];
+
+      session.forEach(function (entry, index) {
+        lines.push(
+          'STEP ' + String(index + 1).padStart(2, '0'),
+          'Path ' + entry.pathNumber + ' // ' + entry.pathName,
+          'Route: ' + entry.from + ' -> ' + entry.to,
+          entry.attribution ? 'Current: ' + entry.attribution : '',
+          'Prompt: ' + entry.prompt,
+          'Reflection: ' + (entry.reflection || '[no reflection recorded]'),
+          ''
+        );
+      });
+
+      return lines.filter(function (line) { return line !== ''; }).join('\n\n');
+    }
+
+    function downloadSession() {
+      if (session.length === 0) return;
+      const blob = new Blob([sessionText()], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'kore-pathworking-session-' + new Date().toISOString().replace(/[:.]/g, '-') + '.txt';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 0);
+      document.getElementById('game-status').textContent = 'Session record prepared for local download.';
+    }
+
+    document.getElementById('draw-step-btn').addEventListener('click', drawStep);
+    document.getElementById('download-log-btn').addEventListener('click', downloadSession);
+  })();
+  </script>
+</body>
+</html>
