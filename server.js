@@ -89,6 +89,7 @@ for (const [route, [file, type, cacheControl]] of Object.entries(STATIC_FILES)) 
 // Public Womb Matrix map and its validated static data.
 const MATRIX_HTML = fs.readFileSync(path.join(ROOT, 'matrix', 'index.html'));
 const MATRIX_JSON = fs.readFileSync(path.join(ROOT, 'matrix', 'tree.json'));
+const ORACLE_JS = fs.readFileSync(path.join(ROOT, 'matrix', 'oracle.js'));
 app.get(['/matrix', '/matrix/'], (req, res) => {
   res.set('Cache-Control', 'no-cache');
   res.type('html').send(MATRIX_HTML);
@@ -130,6 +131,10 @@ app.get('/matrix/paths/:number/', (req, res) => {
 app.get('/matrix/tree.json', (req, res) => {
   res.set('Cache-Control', 'no-cache');
   res.type('application/json').send(MATRIX_JSON);
+});
+app.get('/matrix/oracle.js', (req, res) => {
+  res.set('Cache-Control', 'no-cache');
+  res.type('application/javascript').send(ORACLE_JS);
 });
 
 app.get(['/egbe', '/egbe/'], (req, res) => {
