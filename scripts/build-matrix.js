@@ -252,11 +252,11 @@ write('', page({
   canonical: '/matrix/',
   index: true,
   extraCss: MAP_CSS + CHAMBER_CSS + ORACLE_CSS,
-  body: `<main class="wrap"><div class="top"><a href="/">← Kore's House</a><span><a href="/games/solo-pathworking.html">Playground</a> · The Oracle · The Tree</span></div>
+  body: `<main class="wrap"><div class="top"><a href="/">← Kore's House</a><span><a href="/games/solo-pathworking.html">Playground</a> · <a href="/manifesto.html">Manifesto</a> · The Oracle · The Tree</span></div>
 <p class="eyebrow">Kore the Oracle · Womb Matrix</p>
 <h1>The Womb Matrix</h1>
 <p class="intro">${esc(tree.intro)}</p>
-<section class="oracle-sanctuary-widget" aria-labelledby="oracle-cast-title">
+<section class="oracle-sanctuary-widget" id="oracle-cast-container" aria-labelledby="oracle-cast-title">
 <h2 id="oracle-cast-title">Consult the Oracle Matrix</h2>
 <p>Align attention with the thirty-two currents of Kore's Womb Matrix. A cast offers a station, a road, and a contemplative decree—not certainty.</p>
 <button class="oracle-cast-button" id="cast-oracle-btn" type="button">Cast Matrix Current</button>
