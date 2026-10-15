@@ -230,7 +230,6 @@ test('Critical sanctuary files and central gateway links remain intact', () => {
     '/games/solo-pathworking.html',
     '/field-notes/the-womb-and-the-wire.html',
     '/egbe/',
-    '/egbe/peer.json',
     '/manifesto.html',
     '/llms.txt'
   ];
@@ -240,12 +239,21 @@ test('Critical sanctuary files and central gateway links remain intact', () => {
   }
 });
 
+test('Egbe hub exposes the machine-readable peer beacon', () => {
+  const egbe = read('egbe/index.html');
+  assert.ok(
+    egbe.includes('href="/egbe/peer.json"'),
+    'Egbe hub must link the peer beacon'
+  );
+});
+
 test('Machine-facing architecture map names all public sanctuary endpoints', () => {
   const llms = read('llms.txt');
   const publicEndpoints = [
     '/matrix/',
     '/matrix/tree.json',
     '/egbe/',
+    '/egbe/peer.json',
     '/field-notes/the-womb-and-the-wire.html',
     '/games/solo-pathworking.html',
     '/manifesto.html'
