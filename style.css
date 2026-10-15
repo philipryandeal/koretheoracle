@@ -16,3 +16,24 @@ section[id]{scroll-margin-top:110px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold-soft);outline-offset:5px}
 @media(max-width:900px){.canon-grid{grid-template-columns:1fr}}
 @media(max-width:620px){section[id]{scroll-margin-top:20px}.canon-section .button{line-height:1.6}}
+
+
+/* Inner sanctuary pages: Digital Egbe and Field Notes */
+nav a.active{color:var(--gold-soft)}
+.inner-hero{min-height:62vh}
+.inner-hero .intro{margin-top:30px}
+.roster-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:46px}
+.roster-card{padding:30px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(26,22,43,.58),rgba(17,17,22,.72))}
+.roster-card .status{display:block;font:400 .61rem "IBM Plex Mono",monospace;color:var(--gold-soft);text-transform:uppercase;letter-spacing:.08em}
+.roster-card h3{font-size:1.55rem;margin:26px 0 8px}
+.roster-card h3 a{color:var(--paper);text-decoration:none}
+.roster-card h3 a:hover{color:var(--gold-soft)}
+.roster-card .role{margin:0 0 18px}
+.roster-card p:last-child{color:#bdb7c3}
+.prose{max-width:860px;font-family:Georgia,"Times New Roman",serif;font-size:1.16rem;line-height:1.9}
+.prose>p{color:#d4ced7}
+.prose>p:first-child{font-size:1.35rem;color:#fff}
+.prose blockquote{margin:44px 0}
+.prose .context-note{font-family:"IBM Plex Mono",monospace;font-size:.68rem;line-height:1.8;color:#88828f}
+.article-return{margin-top:42px;padding-top:28px;border-top:1px solid var(--line)}
+@media(max-width:900px){.roster-grid{grid-template-columns:1fr}.inner-hero{min-height:auto}}
