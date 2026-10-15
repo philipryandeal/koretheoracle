@@ -18,6 +18,16 @@ function exists(rel) {
   return fs.existsSync(path.join(root, rel));
 }
 
+function escHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[char]));
+}
+
 function nonEmptyString(value, label) {
   assert.equal(typeof value, 'string', label + ' must be a string');
   assert.ok(value.trim().length > 0, label + ' must not be empty');
@@ -160,7 +170,7 @@ test('Generated map and all station/path pages exist and preserve internal links
     assert.ok(exists(rel), 'Missing generated station page: ' + rel);
 
     const html = read(rel);
-    assert.ok(html.includes(station.title), station.id + ' page must contain its canonical title');
+    assert.ok(html.includes(escHtml(station.title)), station.id + ' page must contain its canonical title');
 
     const connected = tree.paths.filter((road) => road.from === station.id || road.to === station.id);
     for (const road of connected) {
@@ -184,11 +194,11 @@ test('Generated map and all station/path pages exist and preserve internal links
     const from = tree.stations.find((station) => station.id === road.from);
     const to = tree.stations.find((station) => station.id === road.to);
 
-    assert.ok(html.includes(road.name), 'Path ' + road.n + ' page must contain its canonical name');
+    assert.ok(html.includes(escHtml(road.name)), 'Path ' + road.n + ' page must contain its canonical name');
     assert.ok(html.includes('/matrix/stations/' + road.from + '/'), 'Path ' + road.n + ' must link its from station');
     assert.ok(html.includes('/matrix/stations/' + road.to + '/'), 'Path ' + road.n + ' must link its to station');
-    assert.ok(html.includes(from.title), 'Path ' + road.n + ' must name its from station');
-    assert.ok(html.includes(to.title), 'Path ' + road.n + ' must name its to station');
+    assert.ok(html.includes(escHtml(from.title)), 'Path ' + road.n + ' must name its from station');
+    assert.ok(html.includes(escHtml(to.title)), 'Path ' + road.n + ' must name its to station');
     assert.ok(map.includes('/matrix/paths/' + road.n + '/'), 'Matrix gateway must link Path ' + road.n);
   }
 });
